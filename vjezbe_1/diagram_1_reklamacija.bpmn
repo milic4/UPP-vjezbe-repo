@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_03dgfsv" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.52.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.10.0">
+  <bpmn:collaboration id="Collaboration_1ev3vfz">
+    <bpmn:participant id="Participant_04qmga7" name="NAJAM VOZILA" processRef="Process_11vlv40" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_11vlv40" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_0qpiqno">
+      <bpmn:lane id="Lane_1w2x544" name="MANAGMENT" />
+      <bpmn:lane id="Lane_0cjeog6" name="ADMINISTRATOR" />
+      <bpmn:lane id="Lane_1b5i27a" name="KLIJENT">
+        <bpmn:flowNodeRef>Event_0hkbqti</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0pqy2ys</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Event_0hkbqti" name="Zahtjev za najam podnesen">
+      <bpmn:outgoing>Flow_0ttj24i</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_0pqy2ys" name="Ispunjavanje obrasca">
+      <bpmn:incoming>Flow_0ttj24i</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0ttj24i" sourceRef="Event_0hkbqti" targetRef="Activity_0pqy2ys" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1ev3vfz">
+      <bpmndi:BPMNShape id="Participant_04qmga7_di" bpmnElement="Participant_04qmga7" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1160" height="380" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1w2x544_di" bpmnElement="Lane_1w2x544" isHorizontal="true">
+        <dc:Bounds x="190" y="80" width="1130" height="127" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0cjeog6_di" bpmnElement="Lane_0cjeog6" isHorizontal="true">
+        <dc:Bounds x="190" y="207" width="1130" height="127" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1b5i27a_di" bpmnElement="Lane_1b5i27a" isHorizontal="true">
+        <dc:Bounds x="190" y="334" width="1130" height="126" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0hkbqti_di" bpmnElement="Event_0hkbqti">
+        <dc:Bounds x="242" y="382" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="218" y="425" width="84" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pqy2ys_di" bpmnElement="Activity_0pqy2ys">
+        <dc:Bounds x="330" y="360" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0ttj24i_di" bpmnElement="Flow_0ttj24i">
+        <di:waypoint x="278" y="400" />
+        <di:waypoint x="330" y="400" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
